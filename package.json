@@ -1,0 +1,21 @@
+{
+  "name": "prebuilds-thin",
+  "version": "0.1.0",
+  "description": "remove unnecessary node prebuilds for current platform on install",
+  "bin": {
+    "prebuilds-thin": "./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tctony/prebuilds-thin.git"
+  },
+  "author": "Tony Tang <tangchang21@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tctony/prebuilds-thin/issues"
+  },
+  "homepage": "https://github.com/tctony/prebuilds-thin#readme",
+  "dependencies": {
+    "rimraf": "^4.4.0"
+  }
+}
