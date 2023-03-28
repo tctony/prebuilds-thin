@@ -17,12 +17,13 @@ function removeOtherPlatformPrebuilds() {
     return;
   }
 
-  const dir = path.resolve("prebuilds");
-  for (const dirName of readdirSync(dir)) {
-    if (!path.basename(dirName).startsWith(process.platform)) {
-      const dirPath = path.join(dir, dirName);
-      // console.log(`remove dir: ${dirPath}`);
-      rimrafSync(dirPath);
+  for (const dir of [path.resolve('prebuilds'), path.resolve('dylibs')]) {
+    for (const dirName of readdirSync(dir)) {
+      if (!path.basename(dirName).startsWith(process.platform)) {
+        const dirPath = path.join(dir, dirName);
+        // console.log(`remove dir: ${dirPath}`);
+        rimrafSync(dirPath);
+      }
     }
   }
 }
