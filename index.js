@@ -18,6 +18,9 @@ function removeOtherPlatformPrebuilds() {
   }
 
   for (const dir of [path.resolve('prebuilds'), path.resolve('dylibs')]) {
+    if (!fs.existsSync(dir)) {
+      continue;
+    }
     for (const dirName of readdirSync(dir)) {
       if (!path.basename(dirName).startsWith(process.platform)) {
         const dirPath = path.join(dir, dirName);
